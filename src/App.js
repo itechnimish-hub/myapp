@@ -1,3 +1,5 @@
+import Counter from './concept/Couter';
+import Parent from './concept/Parent';
 import logo from './logo.svg';
 
 import Navbar from './navbar/Navbar';
@@ -7,7 +9,8 @@ import Navbar from './navbar/Navbar';
 function App() {
   return (
     <div>
-      <Navbar />
+      <Counter />
+      <Parent />
 
     </div>
   );
