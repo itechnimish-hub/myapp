@@ -1,16 +1,18 @@
-import Counter from './concept/Couter';
-import Parent from './concept/Parent';
-import logo from './logo.svg';
+import UserList from "./concept/hoc/UserList";
+import withFetch from "./concept/hoc/withFetch";
 
-import Navbar from './navbar/Navbar';
 
 
 
 function App() {
+  const API_URL = "https://jsonplaceholder.typicode.com/users";
+  const UserListWithFetch = withFetch(UserList, API_URL);
+
   return (
     <div>
-      <Counter />
-      <Parent />
+      <h2>Users Data:</h2>
+     <UserListWithFetch />
+    
 
     </div>
   );

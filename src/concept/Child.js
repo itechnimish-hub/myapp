@@ -1,15 +1,16 @@
 import { useState } from "react";
 
-function Child({ sendDataToParent }) {
+function Child({ setDataFromChild, abc }) {
     const [data, setData] = useState("testing");
 
-    // function handleClick() {
-    sendDataToParent(data);
-    // }
+
+    setDataFromChild(data);
+
 
     return (
         <div>
             <h1>Child Component</h1>
+            <h1>{abc}</h1>
         </div>
     );
 }

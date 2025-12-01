@@ -11,7 +11,7 @@ function Parent() {
     return (
         <div>
             <h1>Data from Child: {dataFromChild}</h1>
-            <Child sendDataToParent={handleDataFromChild} />
+            <Child sendDataToParent={handleDataFromChild} abc="hi" />
         </div>
     );
 }
