@@ -6,8 +6,6 @@ export default function List() {
 
     const [Data, setData] = useState([]);
     const [search, setSearch] = useState("");
-    // const [currentPage, setCurrentPage] = useState(1);
-    // const [postPerPage] = useState(5);  // show 5 data per page
 
     // Get data
     useEffect(() => {
@@ -16,26 +14,12 @@ export default function List() {
         });
     }, []);
 
-    // Delete Data
-    function Deletedata(id) {
-        axios.delete(`http://localhost:3000/blog/${id}`).then(() => {
-            alert(" Blog Deleted Successfully");
-            setData(Data.filter(item => item.id !== id)); // update UI instantly
-        });
-    }
-
     // Filter Data 
     const filteredData = Data.filter(item =>
         (item.Title ? item.Title.toLowerCase() : "").includes(search.toLowerCase()) ||
         (item.Description ? item.Description.toLowerCase() : "").includes(search.toLowerCase())
     );
-    // Pagination Logic
-    // const lastIndex = currentPage * postPerPage;
-    // const firstIndex = lastIndex - postPerPage;
-    // const currentPosts = filteredData.slice(firstIndex, lastIndex);
-    // console.log(currentPosts)
-    // const totalPages = Math.ceil(filteredData.length / postPerPage);
-    // console.log(totalPages)
+
     return (
         <div>
             <br /><br />
@@ -55,7 +39,7 @@ export default function List() {
                         <th>ID</th>
                         <th>Title</th>
                         <th>Description</th>
-                        <th>Action</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -65,31 +49,13 @@ export default function List() {
                                 <td>{i + 1}</td>
                                 <td>{item.Title}</td>
                                 <td>{item.Description}</td>
-                                <td>
-                                    <button onClick={() => Deletedata(item.id)}>Delete</button>
-                                    <Link to={"/update/" + item.id}>
-                                        <button>Edit</button>
-                                    </Link>
-                                </td>
+
                             </tr>
                         )
                     }
                 </tbody>
             </table>
-            {/* 
-            <div style={{ marginTop: "10px" }}>
-                {
-                    [...Array(totalPages).keys()].map(num =>
-                        <button
-                            key={num}
-                            onClick={() => setCurrentPage(num + 1)}
-                            style={{ margin: "3px", background: currentPage === num + 1 ? "lightgreen" : "" }}
-                        >
-                            {num + 1}
-                        </button>
-                    )
-                }
-            </div> */}
+
         </div>
     );
 }

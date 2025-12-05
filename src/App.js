@@ -1,18 +1,18 @@
-import UserList from "./concept/hoc/UserList";
-import withFetch from "./concept/hoc/withFetch";
 
+import CustomApi from "./concept/Hooks/CustomApi";
+import Parent from "./concept/Parent";
+import List from "./crud/List";
 
 
 
 function App() {
-  const API_URL = "https://jsonplaceholder.typicode.com/users";
-  const UserListWithFetch = withFetch(UserList, API_URL);
+
 
   return (
     <div>
       <h2>Users Data:</h2>
-     <UserListWithFetch />
-    
+
+      <CustomApi />
 
     </div>
   );
