@@ -1,7 +1,8 @@
-import useCounter from '../useCounter';
+import useCounter from "./UseCounter";
+
 
 export default function CounterComponent() {
-    const { count, increment, decrement, reset } = useCounter(10);
+    const { count, increment, decrement, reset } = useCounter();
 
     return (
         <div>

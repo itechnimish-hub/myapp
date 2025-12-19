@@ -1,8 +1,10 @@
 
+import CounterComponent from "./concept/Hooks/CounterComponent";
 import CustomApi from "./concept/Hooks/CustomApi";
 import Parent from "./concept/Parent";
 import List from "./crud/List";
-
+import FunctionalErrorBoundary from "./FunctionalErrorBoundary";
+import BugComponent from "./BugComponent";
 
 
 function App() {
@@ -10,10 +12,7 @@ function App() {
 
   return (
     <div>
-      <h2>Users Data:</h2>
-
-      <CustomApi />
-
+      
     </div>
   );
 }
