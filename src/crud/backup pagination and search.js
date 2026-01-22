@@ -38,46 +38,46 @@ export default function List() {
     // console.log(totalPages)
     return (
         <div>
-        <br /><br / >
+            <br /><br />
 
-        <input
-                type= "text"
-    placeholder = "Search by title or description..."
-    value = { search }
-    onChange = {(e) => setSearch(e.target.value)
-}
+            <input
+                type="text"
+                placeholder="Search by title or description..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)
+                }
             />
 
-    < br /> <br />
+            <br /> <br />
 
-    < table border = "1" >
-        <thead>
-        <tr>
-        <th>ID </th>
-        < th > Title </th>
-        < th > Description </th>
-        < th > Action </th>
-        </tr>
-        </thead>
-        <tbody>
-{
-    filteredData.map((item, i) =>
-        <tr key={ item.id } >
-    <td>{ i + 1} </td>
-        < td > { item.Title } </td>
-        < td > { item.Description } </td>
-        < td >
-        <button onClick={ () => Deletedata(item.id) }> Delete </button>
-            < Link to = { "/update/" + item.id } >
-                <button>Edit </button>
-                </Link>
-                </td>
-                </tr>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>ID </th>
+                        <th> Title </th>
+                        <th> Description </th>
+                        <th> Action </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        filteredData.map((item, i) =>
+                            <tr key={item.id} >
+                                <td>{i + 1} </td>
+                                < td > {item.Title} </td>
+                                < td > {item.Description} </td>
+                                < td >
+                                    <button onClick={() => Deletedata(item.id)}> Delete </button>
+                                    < Link to={"/update/" + item.id} >
+                                        <button>Edit </button>
+                                    </Link>
+                                </td>
+                            </tr>
                         )
                     }
-</tbody>
-    </table>
-{/* 
+                </tbody>
+            </table>
+            {/* 
             <div style={{ marginTop: "10px" }}>
                 {
                     [...Array(totalPages).keys()].map(num =>
@@ -91,6 +91,6 @@ export default function List() {
                     )
                 }
             </div> */}
-</div>
+        </div>
     );
 }

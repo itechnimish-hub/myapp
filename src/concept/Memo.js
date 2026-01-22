@@ -15,4 +15,4 @@ function Memo() {
   );
 }
 
-export default memo(Pure_ex_fun);
+export default memo(Memo);

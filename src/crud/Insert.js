@@ -3,6 +3,7 @@ import React, { useState } from "react";
 function Insert() {
   const [Title, setTitle] = useState("");
   const [Description, setDescription] = useState("");
+
   function Create_data() {
 
     fetch(`http://localhost:3000/blog?Title=${Title}`)

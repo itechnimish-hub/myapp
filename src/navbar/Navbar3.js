@@ -8,17 +8,17 @@ export default function App() {
         <Router>
             <ul>
 
-                <Link to="/home"><li >Home</li></Link>
-                <Link to="/About" ><li >About Page</li></Link>
+                <Link to="/"><li >Home</li></Link>
+                <Link to="/about" ><li >About Page</li></Link>
 
             </ul>
             <Routes>
 
                 <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
+                <Route path="/about/:id" element={<About />} />
 
                 {/* 404 Redirect */}
-                <Route path="*" element={<Navigate to="/" />} />
+                {/* <Route path="*" element={<Navigate to="/" />} /> */}
 
             </Routes>
         </Router>

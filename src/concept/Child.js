@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Child({ setDataFromChild, abc }) {
+function Child({ setDataFromChild }) {
     const [data, setData] = useState("testing");
 
 
@@ -10,7 +10,7 @@ function Child({ setDataFromChild, abc }) {
     return (
         <div>
             <h1>Child Component</h1>
-            <h1>{abc}</h1>
+            {/* <h1>{abc}</h1> */}
         </div>
     );
 }

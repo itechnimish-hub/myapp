@@ -1,10 +1,29 @@
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import CounterComponent from "./concept/Hooks/CounterComponent";
 import CustomApi from "./concept/Hooks/CustomApi";
 import Parent from "./concept/Parent";
-import List from "./crud/List";
+import List from "./concept/List";
 import FunctionalErrorBoundary from "./FunctionalErrorBoundary";
 import BugComponent from "./BugComponent";
+import Uncontrol from "./concept/Componenttype/Uncontrol";
+import Shop from "./concept/Shop";
+import Navbar3 from './navbar/Navbar3';
+
+// import ComponentWithError from "./crud/error/ComponentWithError";
+// import { ErrorBoundary }
+//   from "react-error-boundary";
+
+// const ErrorFallback =
+//   ({ error }) => (
+//     <div role="alert">
+//       <h2>
+//         Something went wrong:
+//       </h2>
+//       <pre>
+//         {error.message}
+//       </pre>
+//     </div>
+//   );
 
 
 function App() {
@@ -12,7 +31,13 @@ function App() {
 
   return (
     <div>
-      
+      <Uncontrol />
+      {/* <ErrorBoundary
+        FallbackComponent={ErrorFallback}>
+        <ComponentWithError />
+      </ErrorBoundary> */}
+
+      {/* <List /> */}
     </div>
   );
 }

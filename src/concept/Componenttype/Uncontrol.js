@@ -2,18 +2,18 @@ import React, { useRef } from 'react';
 
 export default function Uncontrol() {
   const inputRef = useRef(null);
-
+  const inputRef1 = useRef(null);
   const handleSubmit = () => {
-  
-    alert('Input value: ' + inputRef.current.value);
-
+    let x = inputRef.current.value;
+    inputRef1.current.value = x;
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text"  ref={inputRef} />
-      
-      <button type="submit">Submit</button>
-    </form>
+    <div>
+
+      <input type="text" ref={inputRef} />
+      <input type="text" ref={inputRef1} value="" />
+      <button type="submit" onClick={handleSubmit}>Submit</button>
+    </div>
   );
 }
