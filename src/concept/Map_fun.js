@@ -7,8 +7,6 @@ export default function Map_fun() {
             { name: 'xyz', email: 'xyz@gmail.com', age: 25 },
             { name: 'pqr', email: 'pqr@gmail.com', age: 45 },
             { name: 'pqr', email: 'pqr@gmail.com', age: 45 }
-
-
         ]
 
     });
