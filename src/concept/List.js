@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 
 import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button';
 
-export default function List() {
+function List() {
 
     const [Search, setSearch] = useState(
         [
@@ -24,7 +24,7 @@ export default function List() {
             }
         ]);
 
-
+    console.log("hello");
 
     return <div>
         {/* <br /><br /> */}
@@ -58,3 +58,4 @@ export default function List() {
 
 
 }
+export default memo(List);

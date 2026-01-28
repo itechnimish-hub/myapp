@@ -8,6 +8,10 @@ import BugComponent from "./BugComponent";
 import Uncontrol from "./concept/Componenttype/Uncontrol";
 import Shop from "./concept/Shop";
 import Navbar3 from './navbar/Navbar3';
+import Memo from './concept/Memo';
+
+import UserList from "./concept/hoc/UserList";
+import withFetch from "./concept/hoc/withFetch";
 
 // import ComponentWithError from "./crud/error/ComponentWithError";
 // import { ErrorBoundary }
@@ -27,11 +31,12 @@ import Navbar3 from './navbar/Navbar3';
 
 
 function App() {
-
+  const API_URL = "https://jsonplaceholder.typicode.com/users";
+  const UserListWithFetch = withFetch(UserList, API_URL);
 
   return (
     <div>
-      <Uncontrol />
+      <UserListWithFetch />
       {/* <ErrorBoundary
         FallbackComponent={ErrorFallback}>
         <ComponentWithError />
