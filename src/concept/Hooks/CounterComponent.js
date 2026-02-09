@@ -9,10 +9,10 @@ export default function CounterComponent() {
     return (
         <div> 
 
-            <h2>Count: {count}</h2>
-            <button onClick={increment}>+</button>
-            <button onClick={decrement}>-</button>
-            <button onClick={reset}>Reset</button>
+            <h2>Count: { count } </h2>
+            <button onClick={increment}> + </button>
+            <button onClick={decrement}> - </button>
+            <button onClick={reset}> Reset </button>
 
         </div>
     );

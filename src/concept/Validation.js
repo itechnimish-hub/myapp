@@ -37,6 +37,8 @@ const Validation = () => {
     const handleSubmit = (e) => {
 
         if (valid()) {
+
+            console.log(user, email, password)
             alert("Form Successfully Submitted")
         }
     }

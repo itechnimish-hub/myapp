@@ -12,6 +12,9 @@ import Memo from './concept/Memo';
 
 import UserList from "./concept/hoc/UserList";
 import withFetch from "./concept/hoc/withFetch";
+import Validation from './concept/Validation';
+
+
 
 // import ComponentWithError from "./crud/error/ComponentWithError";
 // import { ErrorBoundary }
@@ -42,7 +45,7 @@ function App() {
         <ComponentWithError />
       </ErrorBoundary> */}
 
-      {/* <List /> */}
+      <Navbar3 />
     </div>
   );
 }

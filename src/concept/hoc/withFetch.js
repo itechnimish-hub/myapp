@@ -3,11 +3,8 @@ import React, { useEffect, useState } from "react";
 
 function withFetch(UserList, url) {
 
-
-
     return function EnhancedComponent() {
         const [data, setData] = useState([]);
-
 
         useEffect(() => {
             fetch(url)
@@ -16,11 +13,8 @@ function withFetch(UserList, url) {
                     setData(result);
 
                 })
-
         }, []);
-
         return <UserList data={data} />;
     };
 }
-
 export default withFetch;

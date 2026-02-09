@@ -31,7 +31,7 @@ function List() {
         {/* <Button variant="primary">Primary</Button>
         <Button variant="secondary">Secondary</Button>
         <Button variant="success">Success</Button> */}
-        <Table striped bordered hover variant="dark">
+        <table >
             <thead>
                 <tr>
                     <th>#</th>
@@ -50,7 +50,7 @@ function List() {
                     )
                 }
             </tbody>
-        </Table>
+        </table>
 
 
     </div>
