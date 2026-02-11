@@ -52,10 +52,7 @@ function List() {
             </tbody>
         </table>
 
-
     </div>
-
-
 
 }
 export default memo(List);

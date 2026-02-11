@@ -13,6 +13,7 @@ import Memo from './concept/Memo';
 import UserList from "./concept/hoc/UserList";
 import withFetch from "./concept/hoc/withFetch";
 import Validation from './concept/Validation';
+import Useeffect from './concept/Hooks/Useeffect';
 
 
 
@@ -39,13 +40,15 @@ function App() {
 
   return (
     <div>
-      <UserListWithFetch />
+      {/* <UserListWithFetch /> */}
       {/* <ErrorBoundary
         FallbackComponent={ErrorFallback}>
         <ComponentWithError />
       </ErrorBoundary> */}
 
-      <Navbar3 />
+      {/* <Navbar3  data="hello" /> */}
+
+      <Useeffect />
     </div>
   );
 }

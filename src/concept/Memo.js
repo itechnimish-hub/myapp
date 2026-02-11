@@ -10,7 +10,7 @@ function Memo() {
 
   return (
     <>
-      <List />
+      <List /> 
       <h1>Hooks Example {count}</h1>
       <button onClick={update_data}>Increment</button>
     </>
