@@ -19,11 +19,9 @@ export default function List() {
         (item.Title ? item.Title.toLowerCase() : "").includes(search.toLowerCase()) ||
         (item.Description ? item.Description.toLowerCase() : "").includes(search.toLowerCase())
     );
-
     return (
         <div>
             <br /><br />
-
             <input
                 type="text"
                 placeholder="Search by title or description..."
@@ -32,14 +30,12 @@ export default function List() {
             />
 
             <br /><br />
-
             <table border="1">
                 <thead>
                     <tr>
                         <th>ID</th>
                         <th>Title</th>
                         <th>Description</th>
-
                     </tr>
                 </thead>
                 <tbody>
@@ -49,7 +45,6 @@ export default function List() {
                                 <td>{i + 1}</td>
                                 <td>{item.Title}</td>
                                 <td>{item.Description}</td>
-
                             </tr>
                         )
                     }

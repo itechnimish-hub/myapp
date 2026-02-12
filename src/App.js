@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import CounterComponent from "./concept/Hooks/CounterComponent";
 import CustomApi from "./concept/Hooks/CustomApi";
 import Parent from "./concept/Parent";
-import List from "./concept/List";
+import List from "./crud/List";
 import FunctionalErrorBoundary from "./FunctionalErrorBoundary";
 import BugComponent from "./BugComponent";
 import Uncontrol from "./concept/Componenttype/Uncontrol";
@@ -14,6 +14,7 @@ import UserList from "./concept/hoc/UserList";
 import withFetch from "./concept/hoc/withFetch";
 import Validation from './concept/Validation';
 import Useeffect from './concept/Hooks/Useeffect';
+import Insert from './crud/Insert';
 
 
 
@@ -48,7 +49,8 @@ function App() {
 
       {/* <Navbar3  data="hello" /> */}
 
-      <Useeffect />
+      <Insert />
+      <List />
     </div>
   );
 }
