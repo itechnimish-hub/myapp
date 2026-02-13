@@ -15,6 +15,8 @@ import withFetch from "./concept/hoc/withFetch";
 import Validation from './concept/Validation';
 import Useeffect from './concept/Hooks/Useeffect';
 import Insert from './crud/Insert';
+import Counter from './concept/Couter';
+import Maincomponent from './contextapi/Maincomponent';
 
 
 
@@ -46,11 +48,11 @@ function App() {
         FallbackComponent={ErrorFallback}>
         <ComponentWithError />
       </ErrorBoundary> */}
-
       {/* <Navbar3  data="hello" /> */}
-
+      {/* 
       <Insert />
-      <List />
+      <List /> */}
+      <Maincomponent />
     </div>
   );
 }
