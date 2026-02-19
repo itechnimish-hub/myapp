@@ -68,7 +68,7 @@ export default function List() {
                                 < td > {item.Description} </td>
                                 < td >
                                     <button onClick={() => Deletedata(item.id)}> Delete </button>
-                                    < Link to={"/update/" + item.id} >
+                                    <Link to={"/update/" + item.id} >
                                         <button>Edit </button>
                                     </Link>
                                 </td>

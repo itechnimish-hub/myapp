@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+
 function Update() {
     const [Title, setTitle] = useState("");
+    const [Description, setDescription] = useState("");
     const navigate = useNavigate();
     let { id } = useParams();
+
     function getData() {
 
         fetch('http://localhost:3000/blog/' + id)
             .then((res) => res.json())
             .then((res) => {
-
+                console.log(res);
                 setTitle(res.Title)
-
+                setDescription(res.Description)
             })
 
     }
@@ -23,7 +25,7 @@ function Update() {
 
 
     function updateData() {
-        let item = { Title }
+        let item = { Title, Description }
         fetch('http://localhost:3000/blog/' + id, {
             method: "PUT",
             headers: {
@@ -47,6 +49,7 @@ function Update() {
         <div>
             <h1>Update Form</h1>
             <input type="text" value={Title} onChange={(e) => setTitle(e.target.value)} />
+            <input type="text" value={Description} onChange={(e) => setDescription(e.target.value)} />
             <input type="button" value="Update" onClick={updateData} />
         </div>
     );

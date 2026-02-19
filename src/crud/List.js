@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import axios from "axios";
+import Update from './Update';
 
 export default function List() {
 
@@ -19,8 +20,16 @@ export default function List() {
         (item.Title ? item.Title.toLowerCase() : "").includes(search.toLowerCase()) ||
         (item.Description ? item.Description.toLowerCase() : "").includes(search.toLowerCase())
     );
+
+    function Deletedata(id) {
+        axios.delete(`http://localhost:3000/blog/${id}`).then(() => {
+            alert(" Blog Deleted Successfully");
+            setData(Data.filter(item => item.id !== id)); // update UI instantly
+        });
+    }
     return (
         <div>
+
             <br /><br />
             <input
                 type="text"
@@ -45,6 +54,12 @@ export default function List() {
                                 <td>{i + 1}</td>
                                 <td>{item.Title}</td>
                                 <td>{item.Description}</td>
+                                < td >
+                                    <button onClick={() => Deletedata(item.id)}> Delete </button>
+                                    <Link to={"/update/" + item.id} >
+                                        <button>Edit </button>
+                                    </Link>
+                                </td>
                             </tr>
                         )
                     }
