@@ -16,7 +16,6 @@ function Update() {
                 setTitle(res.Title)
                 setDescription(res.Description)
             })
-
     }
 
     useEffect(() => {
@@ -42,8 +41,6 @@ function Update() {
         // console.warn(item)
 
     }
-
-
 
     return (
         <div>
