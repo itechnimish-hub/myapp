@@ -8,7 +8,7 @@ import FunctionalErrorBoundary from "./FunctionalErrorBoundary";
 import BugComponent from "./BugComponent";
 import Uncontrol from "./concept/Componenttype/Uncontrol";
 import Shop from "./concept/Shop";
-import Navbar3 from './navbar/Navbar3';
+import Navbar from './navbar/Navbar';
 import Memo from './concept/Memo';
 
 // import UserList from "./concept/hoc/UserList";
@@ -46,7 +46,7 @@ function App() {
 
   return (
     <div>
-      <List />
+      <Navbar />
       {/* 
       <Routes>
         <Route path="/" element={<List />} />

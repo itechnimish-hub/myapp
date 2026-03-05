@@ -41,7 +41,7 @@ const Validation = () => {
             console.log(user, email, password)
             alert("Form Successfully Submitted")
         }
-    }
+    } 
 
     return (
         <div>

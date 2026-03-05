@@ -12,7 +12,7 @@ function Update() {
         fetch('http://localhost:3000/blog/' + id)
             .then((res) => res.json())
             .then((res) => {
-                console.log(res);
+                // console.log(res);
                 setTitle(res.Title)
                 setDescription(res.Description)
             })
@@ -44,6 +44,8 @@ function Update() {
 
     return (
         <div>
+
+            {/* user Id is  {id} */}
             <h1>Update Form</h1>
             <input type="text" value={Title} onChange={(e) => setTitle(e.target.value)} />
             <input type="text" value={Description} onChange={(e) => setDescription(e.target.value)} />

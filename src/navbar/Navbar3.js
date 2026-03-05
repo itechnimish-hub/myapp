@@ -4,30 +4,29 @@ import About from "./About";
 
 import { Suspense, lazy } from 'react'
 import Lazy2 from './lazy/Lazy2'
+import Pagenotfound from "./Pagenotfound";
 
 const Lazy1 = lazy(() => import('./lazy/Lazy1'))
 
 export default function App() {
     return (<div>
         {/* <Router>
-             <ul>
-
-                 <Link to="/"><li >Home</li></Link>
+            <ul>
+                <Link to="/"><li >Home</li></Link>
                 <Link to="/about" ><li >About Page</li></Link>
-
             </ul>
-             <Routes>
+            <Routes>
 
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
 
-                <Route path="/about/:id" element={<About />} /> */}
+                <Route path="/about/:id" element={<About />} />
 
-        {/* 404 Redirect */}
-        {/* <Route path="*" element={<Navbar />} /> */}
-        {/* 
+              
+                <Route path="*" element={<Pagenotfound />} />
+
             </Routes>
-         </Router> */}
+        </Router> */}
 
         <Lazy2 />
         <Suspense fallback={<div>Please Wait.....</div>}>
