@@ -8,7 +8,7 @@ import Update from "../crud/Update";
 function Navbar() {
 
   return (
-    <div>
+    <>
 
       <Router>
         <ul>
@@ -23,7 +23,7 @@ function Navbar() {
         </Routes>
       </Router>
 
-    </div>
+    </>
   );
 }
 

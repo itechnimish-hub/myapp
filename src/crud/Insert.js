@@ -9,7 +9,7 @@ function Insert() {
     fetch(`http://localhost:3000/blog?Title=${Title}`)
       .then(res => res.json())
       .then(data => {
-        if (data.length > 0) {
+        if (data.length > 0) { 
 
           alert("Title already exists!");
         } else {

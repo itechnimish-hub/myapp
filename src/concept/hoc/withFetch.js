@@ -14,7 +14,7 @@ function withFetch(UserList, url) {
 
                 })
         }, []);
-        return <UserList data={data} />;
+        return <UserList abc={data} />;
     };
 }
 export default withFetch;

@@ -4,11 +4,11 @@ import { useParams } from 'react-router-dom';
 
 function Home() {
 
-  let { email } = useParams();
+  // let { email } = useParams();
   return (
 
     <div>
-      <h1>{email}Home Component</h1>
+      <h1>Home Component</h1>
     </div>
 
   );

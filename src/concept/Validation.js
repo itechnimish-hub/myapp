@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Validation = () => {
+const Validation = (props) => {
 
     const [user, setUser] = useState("")
     const [email, setEmail] = useState("")
@@ -41,18 +41,20 @@ const Validation = () => {
             console.log(user, email, password)
             alert("Form Successfully Submitted")
         }
-    } 
+    }
 
     return (
         <div>
             <h1>Validation Form Handling</h1>
-            <input type='text' placeholder='Username' value={user} onChange={(e) => { setUser(e.target.value) }} />
+
+            {props.data}
+            <input type='text' placeholder='Username' onChange={(e) => { setUser(e.target.value) }} />
             <br />
             <p>{nameError}</p>
-            <input type='email' placeholder='Email' value={email} onChange={(e) => { setEmail(e.target.value) }} />
+            <input type='email' placeholder='Email' onChange={(e) => { setEmail(e.target.value) }} />
             <br />
             <p>{emailError}</p>
-            <input type='password' placeholder='Password' value={password} onChange={(e) => { setPassword(e.target.value) }} />
+            <input type='password' placeholder='Password' onChange={(e) => { setPassword(e.target.value) }} />
             <br />
             <p>{passwordError}</p>
             <button type='submit' onClick={handleSubmit}>Submit</button>

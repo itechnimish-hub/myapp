@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import axios from "axios";
 import Update from './Update';
-
+// npm i axios 
 export default function List1() {
 
     const [Data, setData] = useState([]);
@@ -14,7 +14,6 @@ export default function List1() {
             setData(res.data);
         });
     }, []);
-
 
     function Deletedata(id) {
         axios.delete(`http://localhost:3000/blog/${id}`).then(() => {
@@ -40,7 +39,7 @@ export default function List1() {
                                 <td>{i + 1}</td>
                                 <td>{item.Title}</td>
                                 <td>{item.Description}</td>
-                                <td >
+                                <td>
                                     <button onClick={() => Deletedata(item.id)}> Delete </button>
                                     <Link to={"/update/" + item.id} >
                                         <button>Edit </button>

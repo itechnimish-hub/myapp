@@ -12,11 +12,11 @@ function Usecallback() {
     }, []); // only created once
 
     return (
-        < div>
+        <div>
             <h1> Count: {count} </h1>
             <button onClick={() => setCount(count + 1)}>Increment</button>
             <Child abc={handleClick} />
-        </ div>
+        </div>
     );
 }
 

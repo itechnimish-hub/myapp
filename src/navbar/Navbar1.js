@@ -17,7 +17,7 @@ function Navbar1() {
             </nav>
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/about/:id" element={<About />} />
+                <Route path="/about" element={<About />} />
             </Routes>
         </HashRouter>
     );

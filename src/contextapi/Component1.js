@@ -6,7 +6,7 @@ function Component1() {
             {
                 (data) => (
                     <div>
-                        {data.name}
+                        {data.name}<br />
                         {data.email}
                     </div>
                 )

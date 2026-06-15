@@ -1,4 +1,4 @@
-import React, { useState, memo } from "react";
+import React, { useState } from "react";
 import List from "./List";
 
 function Memo() {
@@ -10,7 +10,8 @@ function Memo() {
 
   return (
     <>
-      <List /> 
+      <List abc={count} />
+
       <h1>Hooks Example {count}</h1>
       <button onClick={update_data}>Increment</button>
     </>

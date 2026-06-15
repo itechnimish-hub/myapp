@@ -1,7 +1,7 @@
-function UserList({ data }) {
+function UserList({ abc }) {
     return (
         <ul>
-            {data.map(user => (
+            {abc.map(user => (
                 <li key={user.id}>{user.name}</li>
             ))}
         </ul>

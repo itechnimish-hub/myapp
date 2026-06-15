@@ -3,15 +3,24 @@ import useFetch from "./useFetch";
 
 export default function CustomApi() {
     const data = useFetch("https://jsonplaceholder.typicode.com/users");
+    // const data1 = useFetch("https://jsonplaceholder.typicode.com/users");
 
-    if (!data) return <h2>Loading...</h2>;
+    // if (!data) return <h2>Loading...</h2>;
 
     return (
         <div>
             <h1>Users</h1>
-            {data.map(user => (
+            {
+                data.map(user => (
+
+                    <p >{user.name}</p>
+
+                ))}
+
+            {/* <h1>Users</h1>
+            {data1.map(user => (
                 <p key={user.id}>{user.name}</p>
-            ))}
+            ))} */}
         </div>
     );
 }

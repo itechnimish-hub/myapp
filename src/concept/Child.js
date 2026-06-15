@@ -2,11 +2,7 @@ import { useState } from "react";
 
 function Child({ setDataFromChild }) {
     const [data, setData] = useState("testing");
-
-
     setDataFromChild(data);
-
-
     return (
         <div>
             <h1>Child Component</h1>

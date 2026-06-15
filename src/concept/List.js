@@ -3,7 +3,7 @@ import React, { useState, useEffect, memo } from 'react';
 import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button';
 
-function List() {
+function List(props) {
 
     const [Search, setSearch] = useState(
         [
@@ -27,6 +27,8 @@ function List() {
     console.log("hello");
 
     return <div>
+
+        {props.abc} Hello
         {/* <br /><br /> */}
         {/* <Button variant="primary">Primary</Button>
         <Button variant="secondary">Secondary</Button>
