@@ -13,7 +13,7 @@ function Navbar() {
       <Router>
         <ul>
           <Link to="/"><li >List Blog</li></Link>
-          <Link to="/add" ><li >Add Blog</li></Link>
+          <Link to="/add" ><li>Add Blog</li></Link>
         </ul>
         <Routes>
           <Route path="/" element={<List1 />}></Route>

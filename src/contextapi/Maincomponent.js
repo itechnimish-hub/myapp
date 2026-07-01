@@ -4,6 +4,7 @@ import Component1 from './Component1';
 import Component2 from './Component2';
 
 function Maincomponent() {
+
     return (
         <div>
             <CommonContext.Provider value={{ name: "abc", email: "abc@gmail.com" }}>

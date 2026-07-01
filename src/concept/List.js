@@ -28,7 +28,6 @@ function List(props) {
 
     return <div>
 
-        {props.abc} Hello
         {/* <br /><br /> */}
         {/* <Button variant="primary">Primary</Button>
         <Button variant="secondary">Secondary</Button>

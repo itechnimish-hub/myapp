@@ -6,10 +6,10 @@ import Parent from "./concept/Parent";
 // import List from "./crud/List";
 import FunctionalErrorBoundary from "./FunctionalErrorBoundary";
 import React, { useState } from 'react';
-import Uncontrol from "./concept/Componenttype/Uncontrol";
+
 import Shop from "./concept/Shop";
 import Navbar3 from './navbar/Navbar3';
-import Memo from './concept/Memo';
+
 import UserList from "./concept/hoc/UserList";
 import withFetch from "./concept/hoc/withFetch";
 import Validation from './concept/Validation';
@@ -26,6 +26,8 @@ import List from './concept/List';
 import Navbar1 from './navbar/Navbar1';
 import Navbar from './navbar/Navbar';
 import AdminPanel from './concept/Condition/AdminPanel';
+import Style from './css/Style';
+import Child from './concept/Callback/Child';
 
 // import ComponentWithError from "./crud/error/ComponentWithError";
 // import { ErrorBoundary } from "react-error-boundary";
@@ -43,12 +45,11 @@ import AdminPanel from './concept/Condition/AdminPanel';
 
 function App() {
 
-  // const [email, setEmail] = useState("a@gmail.com");
-
+  const [person, setPerson] = useState({ name: "aakash", email: "a@gmial.com", age: 30 });
 
   // const API_URL = "https://jsonplaceholder.typicode.com/users";
   // const UserListWithFetch = withFetch(UserList, API_URL);
-
+  // const UserListWithFetch1 = withFetch(UserList, API_URL1);
   return (
     <>
       {/* <Navbar /> */}
@@ -67,7 +68,9 @@ function App() {
       {/* <Maincomponent /> */}
       {/* <UserListWithFetch /> */}
       {/* <Map_fun data={email} /> */}
-      <AdminPanel />
+      {/* <Control />
+       */}
+      <Navbar />
     </>
   );
 }

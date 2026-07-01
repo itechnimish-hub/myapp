@@ -10,12 +10,12 @@ function Memo() {
 
   return (
     <>
-      <List abc={count} />
+      <List />
 
       <h1>Hooks Example {count}</h1>
       <button onClick={update_data}>Increment</button>
     </>
-  );
+  ); 
 }
 
 export default Memo;

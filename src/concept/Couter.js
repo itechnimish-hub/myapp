@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import Validation from './Validation';
+// import Validation from './Validation';
 
 const initialState = { count: 0 };
 
@@ -19,7 +19,7 @@ function Counter() {
 
     return (
         <div>
-            <Validation data={state.count} />
+            {/* <Validation data={state.count} /> */}
             <p>Count: {state.count}</p>
             <button onClick={() => dispatch({ type: 'increment' })}>+</button>
             <button onClick={() => dispatch({ type: 'decrement' })}>-</button>

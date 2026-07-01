@@ -1,9 +1,12 @@
 function UserList({ abc }) {
     return (
         <ul>
-            {abc.map(user => (
-                <li key={user.id}>{user.name}</li>
-            ))}
+            {
+                abc.map((item, i) =>
+                    <li>{item.name} {item.username}</li>
+                )
+            }
+
         </ul>
     );
 }

@@ -10,11 +10,11 @@ export default function Uncontrol() {
     console.log(x);
   };
 
+
   return (
     <div>
-
       <input type="text" ref={inputRef} value="tetsing" />
-
+      <input type="text" ref={inputRef} value="tetsing" />
       <button type="submit" onClick={handleSubmit}>Submit</button>
     </div>
   );

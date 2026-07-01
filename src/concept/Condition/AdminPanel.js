@@ -4,7 +4,7 @@ import EditorControls from "./EditorControls";
 import GuestView from "./GuestView";
 
 export default function AdminPanel() {
-  const [userRole, setUserRole] = useState("dg"); // Change this to 'admin', 'editor', or 'guest' to test different views
+  const [userRole, setUserRole] = useState("fd"); // Change this to 'admin', 'editor', or 'guest' to test different views
   // console.log(userRole);
   let controlPanel;
 

@@ -7,7 +7,8 @@ function Component2() {
             {
                 (data) => (
                     <div>
-                        {data.name}
+                        <b>  {data.name}</b>
+                        <b>  {data.email}</b>
                     </div>
                 )
             }

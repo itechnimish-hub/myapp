@@ -2,36 +2,43 @@ import { BrowserRouter as Router, Routes, Route, Navigate, Link } from "react-ro
 import Home from "./Home";
 import About from "./About";
 import Pagenotfound from "./Pagenotfound";
+import Sender from "./Sender";
+import Receiver from "./Receiver";
+import { Suspense, lazy } from 'react'
+import Lazy2 from './lazy/Lazy2'
 
-// import { Suspense, lazy } from 'react'
-// import Lazy2 from './lazy/Lazy2'
-// const Lazy1 = lazy(() => import('./lazy/Lazy1'))
+const Lazy1 = lazy(() => import('./lazy/Lazy1'))
 
 export default function Navbar3() {
-    return (<>
+    return (
         <Router>
             <ul>
                 <Link to="/"><li >Home</li></Link>
                 <Link to="/about" ><li >About Page</li></Link>
+
+
             </ul>
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
-
+                <Route path="sender/" element={<Sender />} />
+                <Route path="/profile/:data" element={<Receiver />} />
                 <Route path="/about/:id" element={<About />} />
-
-
                 <Route path="*" element={<Pagenotfound />} />
-
             </Routes>
+            <Lazy2 />
+            <Suspense fallback={<div>Please Wait.....</div>}>
+                <Lazy1 />
+            </Suspense>
+
         </Router>
 
-        {/* <Lazy2 />
-        <Suspense fallback={<div>Please Wait.....</div>}>
-            <Lazy1 />
-        </Suspense> */}
-    </>
+
     );
 }
 
 
+{/* <Lazy2 />
+        <Suspense fallback={<div>Please Wait.....</div>}>
+            <Lazy1 />
+        </Suspense> */}

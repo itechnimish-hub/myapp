@@ -1,55 +1,70 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Update() {
     const [Title, setTitle] = useState("");
     const [Description, setDescription] = useState("");
+
     const navigate = useNavigate();
-    let { id } = useParams();
+    const { id } = useParams();
 
-    function getData() {
+    // Get Single Blog Data
+    const getData = async () => {
+        try {
+            const res = await axios.get(
+                `http://localhost:3000/blog/${id}`
+            );
 
-        fetch('http://localhost:3000/blog/' + id)
-            .then((res) => res.json())
-            .then((res) => {
-                // console.log(res);
-                setTitle(res.Title)
-                setDescription(res.Description)
-            })
-    }
+            setTitle(res.data.Title);
+            setDescription(res.data.Description);
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
+    };
 
     useEffect(() => {
-        getData()
-    }, [])
+        getData();
+    }, []);
 
+    // Update Blog Data
+    const updateData = async () => {
+        try {
+            const item = { Title, Description };
 
-    function updateData() {
-        let item = { Title, Description }
-        fetch('http://localhost:3000/blog/' + id, {
-            method: "PUT",
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(item)
-        }).then((result) => {
-            result.json().then((resp) => {
-                alert('Blog Updated Successfully')
-                navigate('/');
-            })
-        })
+            await axios.put(
+                `http://localhost:3000/blog/${id}`,
+                item
+            );
 
-        // console.warn(item)
-
-    }
+            alert("Blog Updated Successfully");
+            navigate("/");
+        } catch (error) {
+            console.error("Error updating data:", error);
+        }
+    };
 
     return (
         <div>
-
-            {/* user Id is  {id} */}
             <h1>Update Form</h1>
-            <input type="text" value={Title} onChange={(e) => setTitle(e.target.value)} />
-            <input type="text" value={Description} onChange={(e) => setDescription(e.target.value)} />
-            <input type="button" value="Update" onClick={updateData} />
+
+            <input
+                type="text"
+                value={Title}
+                onChange={(e) => setTitle(e.target.value)}
+            />
+
+            <input
+                type="text"
+                value={Description}
+                onChange={(e) => setDescription(e.target.value)}
+            />
+
+            <input
+                type="button"
+                value="Update"
+                onClick={updateData}
+            />
         </div>
     );
 }
