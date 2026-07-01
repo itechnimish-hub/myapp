@@ -1,41 +1,59 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 function Insert() {
   const [Title, setTitle] = useState("");
   const [Description, setDescription] = useState("");
 
-  function Create_data() {
+  const Create_data = async () => {
+    try {
+      // Check if title already exists
+      const response = await axios.get(
+        `http://localhost:3000/blog?Title=${Title}`
+      );
 
-    fetch(`http://localhost:3000/blog?Title=${Title}`)
-      .then(res => res.json())
-      .then(data => {
-        if (data.length > 0) { 
+      if (response.data.length > 0) {
+        alert("Title already exists!");
+      } else {
+        const newData = { Title, Description };
 
-          alert("Title already exists!");
-        } else {
+        await axios.post(
+          "http://localhost:3000/blog",
+          newData
+        );
 
-          let newData = { Title, Description };
+        alert("Blog Added Successfully");
 
-          fetch('http://localhost:3000/blog', {
-            method: "POST",
-            headers: {
-              'content-type': 'application/json'
-            },
-            body: JSON.stringify(newData)
-          })
-            .then(res => res.json())
-            .then(() => {
-              alert('Blog Added Successfully');
-            });
-        }
-      });
-  }
+        setTitle("");
+        setDescription("");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Something went wrong!");
+    }
+  };
 
   return (
     <div>
-      <input type="text" onChange={(e) => setTitle(e.target.value)} />
-      <input type="text" onChange={(e) => setDescription(e.target.value)} />
-      <input type="button" value="submit" onClick={Create_data} />
+      <input
+        type="text"
+        value={Title}
+        onChange={(e) => setTitle(e.target.value)}
+        placeholder="Enter Title"
+      />
+
+      <input
+        type="text"
+        value={Description}
+        onChange={(e) => setDescription(e.target.value)}
+        placeholder="Enter Description"
+      />
+
+      <input
+        type="button"
+        value="Submit"
+        onClick={Create_data}
+      />
     </div>
   );
 }
