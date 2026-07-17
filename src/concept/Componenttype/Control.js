@@ -10,7 +10,7 @@ export default function Control() {
     console.log(data);
   }, []);
 
-  return (
+  return ( 
     <div>
       {/* {data} */}
       <input type="text" onChange={(e) => setData(e.target.value)} />

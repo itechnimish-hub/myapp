@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+                                                                    
 function Insert() {
   const [Title, setTitle] = useState("");
   const [Description, setDescription] = useState("");
@@ -37,14 +37,14 @@ function Insert() {
     <div>
       <input
         type="text"
-        value={Title}
+
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Enter Title"
       />
 
       <input
         type="text"
-        value={Description}
+
         onChange={(e) => setDescription(e.target.value)}
         placeholder="Enter Description"
       />

@@ -28,6 +28,8 @@ import Navbar from './navbar/Navbar';
 import AdminPanel from './concept/Condition/AdminPanel';
 import Style from './css/Style';
 import Child from './concept/Callback/Child';
+import Product from './redux/component/Product';
+import Cart from './redux/component/Cart';
 
 // import ComponentWithError from "./crud/error/ComponentWithError";
 // import { ErrorBoundary } from "react-error-boundary";
@@ -45,7 +47,7 @@ import Child from './concept/Callback/Child';
 
 function App() {
 
-  const [person, setPerson] = useState({ name: "aakash", email: "a@gmial.com", age: 30 });
+  // const [person, setPerson] = useState({ name: "aakash", email: "a@gmial.com", age: 30 });
 
   // const API_URL = "https://jsonplaceholder.typicode.com/users";
   // const UserListWithFetch = withFetch(UserList, API_URL);
@@ -68,9 +70,11 @@ function App() {
       {/* <Maincomponent /> */}
       {/* <UserListWithFetch /> */}
       {/* <Map_fun data={email} /> */}
-      {/* <Control />
-       */}
-      <Navbar />
+      {/* <Control /> */}
+
+      <Product />
+      <hr />
+      <Cart />
     </>
   );
 }

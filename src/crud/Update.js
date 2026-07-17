@@ -35,6 +35,7 @@ function Update() {
             await axios.put(
                 `http://localhost:3000/blog/${id}`,
                 item
+
             );
 
             alert("Blog Updated Successfully");

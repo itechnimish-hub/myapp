@@ -4,9 +4,7 @@ import axios from "axios";
 import Update from './Update';
 // npm i axios 
 export default function List1() {
-
     const [Data, setData] = useState([]);
-
 
     // Get data
     useEffect(() => {
@@ -15,6 +13,7 @@ export default function List1() {
         });
     }, []);
 
+    
     function Deletedata(id) {
         axios.delete(`http://localhost:3000/blog/${id}`).then(() => {
             alert(" Blog Deleted Successfully");

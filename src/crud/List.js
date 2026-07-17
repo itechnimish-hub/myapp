@@ -30,7 +30,7 @@ export default function List() {
     return (
         <div>
 
-            <br /><br />
+            <br/><br />
             <input
                 type="text"
                 placeholder="Search by title or description..."
@@ -65,7 +65,6 @@ export default function List() {
                     }
                 </tbody>
             </table>
-
         </div>
     );
 }
